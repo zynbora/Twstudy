@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details</title>
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" class="js-color-style" href="css/colors/color-1.css">
+    <link rel="stylesheet" class="js-glass-style" href="css/glass.css">
+
+
+</head>
+
+<body>
+     <!--page loader baslangıc-->
+
+     <div class="page-loader js-page-loader">
+        <div></div>
+    </div>
+    <!--page loader bitis-->
+    
+    <div class="main-wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="header-main d-flex justify-content-between align-items-center">
+                    <div class="header-logo">
+                        <a href="index.html"><span>tws</span>tudy</a>
+                    </div>
+                    <button type="button" class="header-hamburger-btn js-header-menu-toggler">
+                        <span></span>
+                    </button>
+                    <div class="header-backdrop js-header-backdrop"></div>
+                    <nav class="header-menu js-header-menu">
+                        <button type="button" class="header-close-btn js-header-menu-toggler">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <ul class="menu">
+                            <li class="menu-item "><a href="index.html">Home</a></li>
+                            <!--submenu baslangıc-->
+                            <li class="menu-item menu-item-has-children">
+                                <a href="#" class="js-toggle-sub-menu">courses
+                                    <i class="fas fa-chevron-down"></i>
+                                </a>
+                                <ul class="sub-menu js-sub-menu">
+                                    <li class="sub-menu-item"><a href="courses.html">course</a></li>
+                                    <li class="sub-menu-item"><a href="courses-details.html">course details</a></li>
+                                </ul>
+                            </li>
+                            <!--submenu bitis-->
+                            <!--submenu baslangıc-->
+                            <li class="menu-item menu-item-has-children">
+                                <a href="#" class="js-toggle-sub-menu">pages
+                                    <i class="fas fa-chevron-down"></i>
+                                </a>
+                                <ul class="sub-menu js-sub-menu">
+                                    <li class="sub-menu-item"><a href="log-in.html">log in</a></li>
+                                    <li class="sub-menu-item"><a href="sign-up.html">sign up</a></li>
+                                </ul>
+                            </li>
+                            <!--submenu bitis-->
+                            <li class="menu-item"><a href="contact.html">contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!--HEADER FİNİTO-->
+
+        <!--BREADCRUMB BASLANGIC-->
+        <div class="breadcrumb-nav">
+            <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="courses.html">courses</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">course details</li>
+                    </ol>
+                </nav>
+
+            </div>
+        </div>
+        <!--BREADCRUMB BİTİS-->
+
+        <!--COURSE DETAILS SECTION BASLANGIC-->
+        <div class="course-details section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <!--COURSE HEADER BASLANGIC-->
+                        <div class="course-header box">
+                            <h2 class="text-capitalize">javascript for beginners</h2>
+                            <div class="rating">
+                                <span class="average-rating">(4.5)</span>
+                                <span class="average-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </span>
+                                <span class="reviews">(230 Reviews)</span>
+                            </div>
+                            <ul>
+                                <li>enrolled students - <span>2200</span></li>
+                                <li>created by - <span><a href="#">Zeynep Bora</a></span></li>
+                                <li>last updated - <span>11/11/2022</span></li>
+                                <li>language - <span>english</span></li>
+                            </ul>
+                        </div>
+                        <!--COURSE HEADER BİTİS-->
+
+                        <!--COURSE TABS BASLANGIC-->
+                        <!--buttondaki id data-bs-target ve aria-controlsdeki isimleri değiştir-->
+                        <nav class="course-tabs">
+                            <div class="nav nav-tabs border-0" id="nav-tab" role="tablist">
+                                <button class="nav-link active" id="course-cirruculum-tab" data-bs-toggle="tab"
+                                    data-bs-target="#course-cirruculum" type="button" role="tab"
+                                    aria-controls="course-cirruculum" aria-selected="true">curriculum</button>
+                                <button class="nav-link" id="course-description-tab" data-bs-toggle="tab"
+                                    data-bs-target="#course-description" type="button" role="tab"
+                                    aria-controls="course-description" aria-selected="false">description</button>
+                                <button class="nav-link" id="course-instructor-tab" data-bs-toggle="tab"
+                                    data-bs-target="#course-instructor" type="button" role="tab"
+                                    aria-controls="course-instructor" aria-selected="false">instructor</button>
+                                <button class="nav-link" id="course-reviews-tab" data-bs-toggle="tab"
+                                    data-bs-target="#course-reviews" type="button" role="tab"
+                                    aria-controls="course-reviews" aria-selected="false">reviews</button>
+                            </div>
+                        </nav>
+                        <!--COURSE TABS BİTİS-->
+
+                        <!--TAB PANES BASLANGIC-->
+                        <div class="tab-content" id="nav-tabContent">
+                            <!--id(course-cirruculum) ve aria-labelledby(course-cirruculum-tab) buttondaki isimlere göre değişecek -->
+
+                            <!--COURSE CIRRUCULUM BASLANGIC-->
+                            <div class="tab-pane fade show active" id="course-cirruculum" role="tabpanel"
+                                aria-labelledby="course-cirruculum-tab" tabindex="0">
+                                <div class="course-cirruculum box">
+                                    <h3 class="text-capitalize mb-4">curriculum</h3>
+                                    <!--ACCORDION BASLANGIC-->
+                                    <div class="accordion" id="accordion">
+                                        <!--ACCORDION ITEM BASLANGIC-->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="heading-1">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapse-1" aria-expanded="true"
+                                                    aria-controls="collapse-1">
+                                                    Language basics <span>2 lessons | 20min</span>
+
+
+                                                </button>
+                                            </h2>
+                                            <div id="collapse-1" class="accordion-collapse collapse show"
+                                                aria-labelledby="heading-1" data-bs-parent="#accordion">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li>
+                                                            <i class="fas fa-play-circle"></i>
+                                                            Lexical structure
+                                                            <span>06:00</span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-play-circle"></i>
+                                                            Values
+                                                            <span>06:00</span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-play-circle"></i>
+                                                            Types
+                                                            <span>06:00</span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-play-circle"></i>
+                                                            Variables
+                                                            <span>06:00</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!--ACCORDION ITEM 1 BİTİS-->
+                                        <!--ACCORDION ITEM 2 BASLANGIC-->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="heading-2">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapse-2" aria-expanded="false"
+                                                    aria-controls="collapse-2">
+                                                    Types <span>2 lessons | 20min</span>
+                                                </button>
+                                            </h2>
+                                            <div id="collapse-2" class="accordion-collapse collapse show"
+                                                aria-labelledby="heading-2" data-bs-parent="#accordion">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li>
+                                                            <i class="fas fa-play-circle"></i>
+                                                            Strings
+                                                            <span>06:00</span>
+                                                        </li>
+
+                                                        <li>
+                                                            <i class="fas fa-play-circle"></i>
+                                                            Booleans
+                                                            <span>06:00</span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-play-circle"></i>
+                                                            Null and undefined
+                                                            <span>06:00</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--ACCORDION ITEM 2 BİTİS-->
+
+                                        <!--ACCORDION ITEM 3 BASLANGIC-->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="heading-3">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapse-3" aria-expanded="false"
+                                                    aria-controls="collapse-3">
+                                                    Control structure <span>2 lessons | 20min</span>
+                                                </button>
+                                            </h2>
+                                            <div id="collapse-3" class="accordion-collapse collapse show"
+                                                aria-labelledby="heading-3" data-bs-parent="#accordion">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li>
+                                                            <i class="fas fa-play-circle"></i>
+                                                            If / else
+                                                            <span>06:00</span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-play-circle"></i>
+                                                            Switch
+                                                            <span>06:00</span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-play-circle"></i>
+                                                            Loops
+                                                            <span>06:00</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--ACCORDION ITEM 3 BİTİS-->
+
+                                        <!--ACCORDION 4 BASLANGIC-->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="heading-4">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapse-4" aria-expanded="false"
+                                                    aria-controls="collapse-4">
+                                                    Function <span> 2 lessons | 20min</span>
+
+                                                </button>
+                                            </h2>
+                                            <div id="collapse-4" class="accordion-collapse collapse show"
+                                                aria-labelledby="heading-4" data-bs-parent="#accordion">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li>
+                                                            <i class="fas fa-play-circle"></i>
+                                                            Arrow function
+                                                            <span>06:00</span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-play-circle"></i>
+                                                            Parameters
+                                                            <span>06:00</span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-play-circle"></i>
+                                                            Return value
+                                                            <span>06:00</span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-play-circle"></i>
+                                                            Recursion
+                                                            <span>06:00</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--ACCORDION ITEM 4 BİTİS-->
+
+                                        <!--ACCORDION ITEM BİTİS-->
+                                    </div>
+
+                                    <!--ACCORDION BİTİS-->
+
+                                </div>
+                            </div>
+                            <!--COURSE CIRRUCULUM BİTİS-->
+
+
+
+                            <!--COURSE DESCRIPTION BASLANGIC-->
+                            <div class="tab-pane fade " id="course-description" role="tabpanel"
+                                aria-labelledby="course-description-tab">
+                                <div class="course-description box">
+                                    <h3 class="text-capitalize mb-4">description</h3>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam quisquam
+                                        aliquid nulla delectus consequuntur, odio voluptatum eligendi iusto quasi
+                                        doloribus fuga dolores nihil ipsam minus nobis distinctio voluptatem porro
+                                        debitis!</p>
+                                    <h4>For who is this course designed?</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam commodi explicabo
+                                        natus non fugiat cupiditate corporis,quam assumenda excepturi vitae tenetur rem
+                                        impedit.In voluptas error libero vel recusandae ipsa.</p>
+                                    <h4>Why should you take this course?</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam at ratione
+                                        maxime veniam voluptates unde ut. Voluptas nesciunt, eveniet, accusamus beatae a
+                                        consequuntur totam labore molestias, delectus nostrum nulla ea!</p>
+
+                                </div>
+                            </div>
+                            <!--COURSE DESCRIPTION BİTİS-->
+
+                            <!--COURSE INSTRUCTOR BASLANGIC-->
+                            <div class="tab-pane fade " id="course-instructor" role="tabpanel"
+                                aria-labelledby="course-instructor-tab" tabindex="0">
+                                <div class="course-instructor box">
+                                    <h3 class="mb-3 text-capitalize">instructor</h3>
+                                    <div class="instructor-details">
+                                        <div class="details-wrap d-flex align-items-center flex-wrap">
+                                            <div class="left-box me-4">
+                                                <div class="img-box">
+                                                    <img src="img/bbg.jpg" alt="instructor img">
+                                                </div>
+                                            </div>
+                                            <div class="right-box">
+                                                <h4>Zeynep Bora <span>(web developer)</span></h4>
+                                                <ul>
+                                                    <li><i class="fas fa-star"></i> 4.5 Rating</li>
+                                                    <li><i class="fas fa-play-circle"></i> 10 Courses </li>
+                                                    <li><i class="fas fa-certificate"></i> 3000 Reviews</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="text">
+                                            <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                Praesentium iste architecto tenetur, neque in dignissimos sit ea placeat
+                                                quo, eligendi amet debitis nobis nam ipsum est incidunt officia minima,
+                                                quod adipisci hic doloribus officiis fuga explicabo? Consequatur fugiat
+                                                eligendi maiores libero, ipsum asperiores repudiandae, hic esse possimus
+                                                iure eius beatae.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- COURSE INSTRUCTOR BİTİS-->
+
+                            <!--COURSE REVİEWS BASLANGIC-->
+                            <div class="tab-pane fade" id="course-reviews" role="tabpanel"
+                                aria-labelledby="course-reviews-tab" tabindex="0">
+                                <div class="course-reviews box">
+                                    <!--RATING SUMMARY BASLANGIC-->
+                                    <div class="rating-summary">
+                                        <h3 class="mb-4 text-capitalize">students feedback</h3>
+                                        <div class="row">
+                                            <div
+                                                class="col-md-4 d-flex justify-content-center text-center align-items-center">
+                                                <div class="rating-box bg-info">
+                                                    <div class="average-rating">4.5</div>
+                                                    <div class="average-stars">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star-half-alt"></i>
+                                                    </div>
+                                                    <div class="reviews">230 Reviews</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="rating-bars">
+                                                    <!--RATING BARS ITEM1 BASLANGIC-->
+                                                    <div class="rating-bars-item ">
+                                                        <div class="star-text">5 Star</div>
+                                                        <div class="progress">
+                                                            <div class="progress-bar" style="width:50%;"></div>
+                                                        </div>
+                                                        <div class="percent">50%</div>
+                                                    </div>
+                                                    <!--RATING BARS ITEM1 BİTİS -->
+                                                    <!--RATING BARS ITEM2 BASLANGIC-->
+                                                    <div class="rating-bars-item">
+                                                        <div class="star-text">4 Star</div>
+                                                        <div class="progress">
+                                                            <div class="progress-bar" style="width:30%;"></div>
+                                                        </div>
+                                                        <div class="percent">30%</div>
+                                                    </div>
+                                                    <!--RATING BARS ITEM2 BİTİS -->
+                                                    <!--RATING BARS ITEM3 BASLANGIC-->
+                                                    <div class="rating-bars-item">
+                                                        <div class="star-text">3 Star</div>
+                                                        <div class="progress">
+                                                            <div class="progress-bar" style="width:10%;"></div>
+                                                        </div>
+                                                        <div class="percent">10%</div>
+                                                    </div>
+                                                    <!--RATING BARS ITEM3 BİTİS -->
+                                                    <!--RATING BARS ITEM4 BASLANGIC-->
+                                                    <div class="rating-bars-item">
+                                                        <div class="star-text">2 Star</div>
+                                                        <div class="progress">
+                                                            <div class="progress-bar" style="width:7%;"></div>
+                                                        </div>
+                                                        <div class="percent">7%</div>
+                                                    </div>
+                                                    <!--RATING BARS ITEM4 BİTİS -->
+                                                    <!--RATING BARS ITEM5 BASLANGIC-->
+                                                    <div class="rating-bars-item">
+                                                        <div class="star-text">1 Star</div>
+                                                        <div class="progress">
+                                                            <div class="progress-bar" style="width:3%;"></div>
+                                                        </div>
+                                                        <div class="percent">3%</div>
+                                                    </div>
+                                                    <!--RATING BARS ITEM5 BİTİS -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--RATING SUMMARY BİTİS-->
+
+                                    <!--REVIEWS FILTER BASLANGIC-->
+                                        <div class="reviews-filter">
+                                            <h3 class="mb-4 text-capitalize">Reviews</h3>
+                                            <form action="">
+                                                <div class="form-group">
+                                                    <i class="fas fa-chevron-down select-icon"></i>
+                                                    <select class="form-control">
+                                                        <option value="">All Reviews</option>
+                                                        <option value="1">1 Star</option>
+                                                        <option value="2">2 Star</option>
+                                                        <option value="3">3 Star</option>
+                                                        <option value="4">4 Star</option>
+                                                        <option value="5">5 Star</option>
+
+                                                    </select>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    <!--REVIEWS FILTER BİTİS-->
+
+                                    <!--REVIEWS LIST BASLANGIC-->
+                                    <div class="reviews-list">
+                                        <!--REVİEWS İTEM BASLANGIC-->
+                                        <div class="reviews-item">
+                                            
+                                            <div class="img-box">
+                                                <img src="img/bbg.jpg" alt="review img">
+                                            </div>
+                                        
+                                       
+                                            <h4>Zeynep Bora</h4>
+                                            <div class="stars-rating">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                    class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                    class="fas fa-star"></i>
+                                                <span class="date">1 week ago</span>
+
+                                            </div>
+                                            <p>Great work, I learnt lot of things about javascript in this course.</p>
+                                        
+                                            
+
+                                            <div class="img-box">
+                                                <img src="img/bbg.jpg" alt="review img">
+                                            </div>
+
+
+                                            <h4>Zeynep Bora</h4>
+                                            <div class="stars-rating">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                    class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                    class="fas fa-star"></i>
+                                                <span class="date">1 week ago</span>
+
+                                            </div>
+                                            <p>Great work, I learnt lot of things about javascript in this course.</p>
+                                            <div class="img-box">
+                                                <img src="img/bbg.jpg" alt="review img">
+                                            </div>
+
+
+                                            <h4>Zeynep Bora</h4>
+                                            <div class="stars-rating">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                    class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                    class="fas fa-star"></i>
+                                                <span class="date">1 week ago</span>
+
+                                            </div>
+                                            <p>Great work, I learnt lot of things about javascript in this course.</p>
+                                        </div>
+                                        <!--REVIEWS ITEM BİTİS-->
+                                    </div>
+                                    <!--REVIEWS LIST BİTİS-->
+                                    <button type="button" class="btn btn-theme">more reviews</button>
+                                </div>
+                            </div>
+                            <!--COURSE REVİEWS BİTİS-->
+                        </div>
+                    </div>
+
+                    <!--tab panes bitis-->
+
+
+                    <div class="col-lg-4">
+                        <!--COURSE SIDEBAR BASLANGIC-->
+                        <div class="course-sidebar box">
+                            <div class="img-box" data-bs-toggle="modal" data-bs-target="#video-modal">
+                                <img src="img/bbg.jpg" class="w-100"  alt="course img">
+                                <div class="play-icon">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <p class="text-center">Course Preview</p>
+                            </div>
+                            <div class="price mb-3">
+                                <span class="price-old text-decoration-line-through">$100</span><!--text-deco line through ile 100 ortadan çizdi-->
+                                <span class="price-new">$49</span>
+                                <span class="price-discount">%51 Off</span>
+                            </div>
+                            <h3 class="mb-3">Course Features</h3>
+                            <ul class="features-list">
+                                <li>Total 15 lessons</li>
+                                <li>Other feature</li>
+                                <li>Other feature</li>
+                                <li>Other feature</li>
+                            </ul>
+                            <div class="btn-wrap">
+                                <button type="button" class="btn btn-theme btn-block">Enroll Now</button>
+                            </div>
+                        </div>
+                        <!--COURSE SIDEBAR BİTİS-->
+                    </div>
+                </div>
+            </div>
+
+            <!--COURSE DETAILS SECTION BİTİS-->
+
+            <!--FOOTER SECTION BASLANGIC-->
+            <footer class="footer">
+                <div class="footer-top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="footer-item">
+                                    <div class="footer-logo">
+                                        <h3><span>tws</span>tudy</h3>
+                                        <ul>
+                                            <li><a href="#">about</a></li>
+                                            <li><a href="#">what we offer</a></li>
+                                            <li><a href="#">careers</a></li>
+                                            <li><a href="#">certificates</a></li>
+                                            <li><a href="#">blog</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="footer-item">
+                                    <h3>learning</h3>
+                                    <ul>
+                                        <li><a href="#">get the app</a></li>
+                                        <li><a href="#">testimonials</a></li>
+                                        <li><a href="#">pricing</a></li>
+                                        <li><a href="#">faq</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="footer-item">
+                                    <h3>more</h3>
+                                    <ul>
+                                        <li><a href="#">affiliates</a></li>
+                                        <li><a href="#">become acourse creater</a></li>
+                                        <li><a href="#">training webinars</a></li>
+                                        <li><a href="#">free personality test</a></li>
+                                        <li><a href="#">help and suppor</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="footer-item">
+                                    <h3>get in touch</h3>
+                                    <ul>
+                                        <li><a href="#"><i class="fab fa-facebook-f social-icon"></i> facebook</a></li>
+                                        <li><a href="#"><i class="fab fa-twitter social-icon"></i> twitter</a></li>
+                                        <li><a href="#"><i class="fab fa-instagram social-icon"></i> instagram</a></li>
+                                        <li><a href="#"><i class="fab fa-youtube social-icon"></i> youtube</a></li>
+                                        <li><a href="#"><i class="fab fa-linkedin-in social-icon"></i> linkedin</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="container">
+                        <p class="m-0 py-4 text-center">Copyright &copy;2021 The WebShala</p>
+                    </div>
+                </div>
+            </footer>
+            <!--FOOTER SECTION BİTİS-->
+        </div>
+    </div>
+    <!--MAIN WRAPPER BİTİS-->
+    
+<!--COURSE PREVIEW MODAL BASLANGIC-->
+<div class="modal fade video-modal js-course-preview-modal" id="video-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <!--modalı hizaladık-->
+      <div class="modal-content">
+        
+        <div class="modal-body">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+            <i class="fas fa-times"></i>
+        </button>
+            <div class="ratio ratio-16x9">
+                <video controls class="js-course-preview-video">
+                    <source src="video/Daft Punk - Instant Crush (Video) ft. Julian Casablancas.mp4" type="video/mp4">
+                </video>
+              </div>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+<!--COURSE PREVIEW MODAL BİTİS-->
+<!--STYLE SWITCHER BASLANGIC-->
+<div class="style-switcher js-style-switcher">
+    <div class="style-switcher-toggler js-style-switcher-toggler">
+        <i class="fas fa-cog"></i>
+    </div>
+    <h3>Style Switcher</h3>
+    <div class="style-switcher-item">
+        <p class="mb-2">Theme Colors</p>
+        <!--THEME COLORS-->
+        <div class="theme-colors js-theme-colors">
+            <button type="button" data-js-theme-color="color-1" class="js-theme-color-item color-1"></button>
+            <button type="button" data-js-theme-color="color-2" class="js-theme-color-item color-2"></button>
+            <button type="button" data-js-theme-color="color-3" class="js-theme-color-item color-3"></button>
+            <button type="button" data-js-theme-color="color-4" class="js-theme-color-item color-4"></button>
+            <button type="button" data-js-theme-color="color-5" class="js-theme-color-item color-5"></button>
+
+        </div>
+    </div>
+    <div class="style-switcher-item">
+     <!--js ile ilgili class verildi ve id ve for değiştirildi-->
+        <div class="form-check form-switch">
+            <input class="form-check-input js-dark-mode" type="checkbox" role="switch" id="js-dark-mode">
+            <label class="form-check-label" for="dark-mode">Dark Mode</label>
+          </div>
+    </div>
+    <div class="style-switcher-item">
+        <div class="form-check form-switch">
+            <input class="form-check-input js-glass-effect" type="checkbox" role="switch" id="glass-effect">
+            <label class="form-check-label" for="glass-effect">Glass Effect</label>
+          </div>
+    </div>
+
+</div>
+
+
+<!--STYLE SWITCHER BİTİS-->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

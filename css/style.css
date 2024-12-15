@@ -1,0 +1,1149 @@
+/*--
+--Table of Contents--
+01. =google fonts
+02. =variables
+03. =overrides variables - theme dark
+04. =base
+05. =box
+06. =customized bootstrap classes
+07. =animation keyframes
+08. =section - padding, title
+09. =buttons
+10. =page loader
+11.= circular img
+12. =forms
+13. =video modal
+14. =pagination
+15. =breadcrumb
+16. =tabs
+17. =bubble animation
+18. =style switcher
+19. =header
+20. =footer
+21. =banner section
+22. =fun facts section
+23. =courses section
+24. =testimonials section
+25. =bai section
+26. =course details section
+27. =contact section
+-*/
+
+/*-----------------------GOOGLE FONTS-----------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+/*-----------------------VARIABLES-----------------------*/
+:root{
+    --orange: hsl(36,80%, 50%);
+    --white:hsl(0,0%,100%);
+    --WHITE:hsl(0,0%,100%);
+    --BLACK:hsl(0,0%,0%);
+    --black-90:hsl(0,0%,10%);
+    --black-70:hsl(0,0%,30%);
+    --black-alpha-40:hsl(0,0%,0%,0.4);
+    --yellow-light:hsl(44,95%,83%);
+    --green-light:hsl(158,68%,75%);
+    --red-light:hsl(0,84%,80%);
+    --orange-light:hsl(22,85%,80%);
+    --select-box-bg-color:hsl(0,0%,100%);
+    --border-color-1:hsl(0,0%,90%);
+}
+
+/*--Overrides variables for theme dark--*/
+body.t-dark{
+    --body-bg-color:hsl(240,10%,19%);
+    --black-70:hsl(0,0%,87%);
+    --black-90:hsl(0,0%, 100%);
+    --shadow:0 0 10px hsla(0,0%,0%,0.08);
+    --white:hsl(240, 8%,21%);
+    --select-box-bg-color:hsl(240, 8%,21%);
+    --border-color-2:hsl(240,9%,25%);
+    --border-color-1:hsl(240, 9%, 30%);
+    
+}
+/*-----------------------BASE-----------------------*/
+body{
+    background-color:var(--body-bg-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color:var(--black-70);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+a{
+    color: var(--main-color);
+    text-decoration: none;
+}
+a:hover{
+    color:var(--main-color);
+}
+img{
+    max-width: 100%;
+}
+h1,h2,h3,h4,h5,h6{
+    color:var(--black-90);
+    line-height: 1.3;
+}
+h3{
+    font-size: 20px;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+::selection{ /*-- bunun anlamına bak--*/
+    color:var(--WHITE);
+    background-color: var(--main-color);
+}
+
+/*----------------------HEADER----------------------*/
+.header{
+    border-bottom: 1px solid var(--border-color-1);
+}
+.header-backdrop,
+.header-close-btn,
+.header-hamburger-btn{
+    display: none;
+}
+.header-logo a{
+    font-size: 26px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color:var(--black-70);
+}
+.header-logo span{
+    color: var(--main-color);
+}
+.header .menu-item{
+    display:inline-block;
+    margin-left:40px;
+    position: relative; /*çünkü alt menusu var*/
+}
+.header .menu-item > a{
+    display: block;
+    padding: 24px 0px;
+    font-weight:400;
+    color: var(--black-90);
+    text-transform: capitalize;
+    transition:color 0.3s ease;
+}
+
+.header .menu-item > a i{ /*ikonların hizalaması*/
+    font-size:13px;
+    margin-left: 3px;
+   pointer-events: none; /*-- bunun anlamına bak--*/
+   transition: transform 0.3 ease;/*js ve resp css kodundan sonra yazıldı ikondaki dönüşün hareketini yumuşattık*/
+}
+.header .sub-menu{
+    position: absolute; /* kapsayıcı menuye relative verdik*/
+    top:100%;
+    background-color: var(--white);
+    left:0;
+    width: 210px;
+    padding: 10px 0px;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease; /*-hareketin süresini ayarlar transform ve opacity etkiler--*/
+    transform:translateY(10px);/*- Y ekseninde aşağıya doğru 10px kayar 0.3s de*/
+    visibility: hidden;
+    opacity: 0;/*-- sub menuyu saklamak için bunu da yazmalısın 0.3s de--*/
+    z-index: 2;
+}
+@media (min-width:992px){ /* @media screen and (min-width:992px)*/
+   
+    .header .menu-item:hover > .sub-menu{
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.header .sub-menu-item a{
+    display:block;
+    padding: 10px 20px;
+    color:var(--black-90);
+    text-transform:capitalize;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+.header .sub-menu a:hover,
+.header .menu-item:hover > a{
+    color:var(--main-color);
+}
+
+/*21---------------------BANNER---------------------*/
+.banner-section{
+    padding: 80px 0px;
+    min-height: 680px;
+}
+.banner-text h2{
+    font-size:20px;
+    color:var(--main-color);
+}
+.banner-text h1{
+    font-size: 45px;
+    font-weight: 700;
+}
+/*06---------------------CUSTOMIZED BS CLASSES---------------------*/
+.container{
+    --bs-gutter-x:15px; /*-- buna bak--*/
+    max-width:1140px;
+}
+.row{
+    --bs-gutter-x:30px;
+}
+/*10---------PAGE LOADER----------(responsive js en son sey)*/
+/*--------PAGE LOADER----------------(js responsive sonrası)*/
+.page-loader{
+    position:fixed;
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    z-index:1001;
+    display:flex;
+    background-color: var(--white);
+}
+.page-loader.fade-out{
+    opacity:0;
+    transition:all 0.6s ease;
+}
+.page-loader div{
+    margin:auto;
+    height:32px;
+    width:32px;
+    border:4px solid var(--main-color);
+    position:relative;
+    animation: loader 2s linear infinite;
+}
+.page-loader div::before{
+    content:'';
+    position:absolute;
+    height:100%;
+    width:100%;
+    background-color:var(--main-color);
+    left:0;
+    top:0;
+    animation:loaderIn 2s linear infinite;
+}
+@keyframes loader{
+    0%{
+        transform:rotate(0deg);
+    }
+    25%, 50%{
+        transform:rotate(180deg);
+    }
+    75%, 100%{
+        transform:rotate(360deg);
+    }
+}
+@keyframes loaderIn{
+    0%, 25%, 100%{
+        height:0%;
+    }
+    50%, 75%{
+        height:100%;
+    }
+}
+/*11---------------------CIRCULAR IMG---------------------*/
+.circular-img{
+    max-width:360px;
+    
+    margin:auto;
+    position: relative;
+    z-index: 1;
+}
+.circular-img-inner{ /* görselin bg transparan oldugunda gözükecek kod*/
+    text-align: center;
+    background-color: green;
+    border-radius:50%;
+    overflow:hidden; /*görselin border radius almasını sağlıyor*/
+}
+/*
+.circular-img-circle{/* görselin önüne geçen kod ikon text vs olabilir 
+    görsele z-index verirsek görüntü görselin arkaasına geçer
+    position:absolute; width height bg left0 bottom0 borde radius
+   /* width:150px; height:150px; background-color: red; left:29%; top: 28%; border-radius:50%;*/
+.circular-img img{ /* z-index dersek görsel öne geçer*/
+    position: relative;
+    z-index:1;
+}
+/*---------------------BUTTONS---------------------*/
+.btn-theme{
+    background-color: var(--main-color);
+    color: var(--WHITE);
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight:500;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+}
+.btn-theme:hover{
+    color:var(--WHITE);
+    background-color: var(--main-color);
+}
+.btn-theme:focus{
+    box-shadow: 0 0 8px var(--main-color);
+}
+/*---------------------BOX---------------------*/
+.box{
+    background-color: var(--white);
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+    padding: 30px;
+}
+
+/*---------------------FUN FACTS SECTION---------------------*/
+.fun-facts-item{
+    padding: 15px 0px;
+}
+.fun-facts-item h2 {
+    font-weight:700;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+.fun-facts-item p{
+    margin:0;
+    text-transform: uppercase;
+}
+.fun-facts-item .style1{
+    color: var(--black-70);
+}
+.fun-facts-item .style2{
+    color: var(--green-light);
+}
+.fun-facts-item .style3{
+    color: var(--red-light);
+}
+.fun-facts-item .style4{
+    color: var(--orange-light);
+}
+/*---------------------SECTION PADDING TITLE---------------------*/
+.section-padding{
+    padding: 60px 0;
+}
+.section-title{
+    margin-bottom: 40px;
+}
+.section-title .title{
+    font-size:20px;
+    color:var(--main-color);
+    text-transform:capitalize;
+}
+.section-title .sub-title{
+    font-size:35px;
+    font-weight:600;
+    color:var(--black-90);
+}
+/*---------------------COURSES SECTION---------------------*/
+.courses-item{
+    margin-bottom: 30px;
+    position: relative;
+}
+.courses-item .img-box img{
+    width: 100%;
+    border-radius: 5px;
+}
+.courses-item .link{
+    color: var(--black-90);
+    display: inline-block;
+}
+.courses-item .title{
+    text-transform: capitalize;
+    margin: 15px 0px;
+    transition:  color 0.3s ease;
+}
+.courses-item:hover .title{
+     color: var(--main-color);
+    }
+.courses-item .instructor {
+    text-transform: capitalize;
+    margin: 0 0 12px;}
+.courses-item .instructor img{
+    width: 50px;
+    height: 50px;
+    border-radius: 200px;
+}
+.courses-item .rating{
+    font-size: 14px;
+}
+.courses-item .average-rating{
+    font-weight:600;
+    color: var(--main-color);
+}
+.courses-item .average-stars i{
+    color: var(--main-color);
+}
+.courses-item .price{
+    position:absolute;
+    background-color: var(--main-color);
+    color: var(--WHITE);
+    top:15px;
+    right:15px;
+    padding: 4px 8px;
+    font-weight:600;
+    border-radius: 5px;
+}
+
+/*---------------------TESTIMONIALS SECTION-----------------------*/
+.testimonials-section .img-box{
+    width: 150px;
+    height: 150px;
+    background-color: violet;
+    margin: 30px auto 50px; /* ortalı bir şekilde üst sağ sol 30px alt 50px*/
+}
+.testimonials-section .img-box::before,
+.testimonials-section .img-box::after /*görselin etrafındaki şekil şukul çizgiler 
+                                        img-box a htmlde position-relative ver*/
+{
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    border:1px solid var(--main-color);
+}
+.testimonials-section .img-box::before /*küçük daire*/
+{
+    height: 180px;
+    width: 180px;
+    left: -15px;
+    top: -15px;
+    border-left: 1px solid transparent;
+
+}
+.testimonials-section .img-box::after{ /*büyük daire*/
+    height: 210px;
+    width: 210px;
+    left: -30px;
+    top: -30px;
+    border-right: 1px solid transparent;
+
+}
+
+/*.testimonials-section .img-box:hover::before,
+.testimonials-section .img-box:hover::after*/
+.testimonials-section .img-box::before,
+.testimonials-section .img-box::after
+{
+    animation: spin 10s linear infinite;
+
+}
+
+
+/*---------------ANIMATION KEYFRAMES-----------------*/
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.testimonials-section .carousel-control-prev,
+.testimonials-section .carousel-control-next
+{
+    position: relative;
+    height: 35px;
+    width: 35px;
+    background-color: var(--main-color);
+    display: inline-block;
+    border-radius: 50%;
+    margin: 0 4px;
+}
+.testimonials-item .text-2{
+    margin: 0;
+    text-transform: capitalize;
+}
+.testimonials-item h3{
+    text-transform: capitalize;
+}
+/*----------------BAI SECTION--------------*/
+ /*
+.bai-section .circular-img{
+   background-color: var(--yellow-light);
+}
+*/
+
+/*---------------FOOTER------------------*/
+.footer-top{
+    padding:50px 0 20px;
+    border-top:1px solid var(--border-color-1);
+
+}
+.footer-item{
+    margin:0 0 30px;
+}
+.footer-item h3{
+    text-transform:capitalize;
+    margin:0 0 20px;
+}
+.footer-item .footer-logo{
+    color:var(--black-70);
+    text-transform: uppercase;
+}
+.footer-item .footer-logo span{
+    color: var(--main-color);
+}
+.footer-item ul li:not(:last-child){/*bunun anlamına bak*/
+    margin-bottom: 8px;
+}
+.footer-item ul a{
+    text-transform: capitalize;
+    color: var(--black-70);
+    transition: color 0.3s ease;
+    position: relative; /*efekt için buraya position relative*/
+}
+.footer-item ul a::before{/*linklerin altına alt çizgi efekti verdik*/
+    content: '';
+    position: absolute;/*::before/::after kısmına absolute*/
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 1px;
+    background-color: var(--main-color);
+    transition: width 0.5s ease;
+}
+.footer-item ul a:hover::before{
+    width: 100%;
+}
+.footer-item ul a:hover{
+    color: var(--main-color);
+}
+.footer-item ul a .social-icon{
+    margin-right:5px;
+}
+.footer-bottom{
+    border-top: 1px solid var(--border-color-1);
+}
+.footer-bottom p{
+    font-size: 14px;
+    
+}
+/*-----------BREADCRUMB-----------*/
+.breadcrumb-nav{
+    padding: 10px 0;
+}
+.breadcrumb-nav .breadcrumb-item{
+    font-size:14px;
+    text-transform: capitalize;
+}
+.breadcrumb-nav .breadcrumb-item + .breadcrumb-item::before,
+.breadcrumb-nav .breadcrumb-item.active{
+    color:var(--black-70);
+}
+/*---------------TABS---------------*/
+.nav-tabs .nav-link{
+    background-color: var(--white);
+    text-transform: capitalize;
+    border-color: var(--border-color-1);
+    padding: 5px 12px;
+    margin: 0 5px 10px;
+    border-radius:5px;
+    color: var(--black-70);
+    font-size:16px ;
+}
+.nav-tabs .nav-link:hover{
+    border-color: var(--border-color-1);
+}
+.nav-tabs .nav-link.active{
+    background-color: var(--main-color);
+    color: var(--WHITE);
+    border-color:transparent;
+}
+/*------------PAGINATION-----------*/
+.page-item.disabled .page-link,
+.page-link{
+    border:none;
+    background-color: transparent;
+    color:var(--black-70);
+}
+.page-item.active .page-link{
+    background:var(--main-color);
+}
+.page-link:hover{
+    background-color: var(--main-color);
+    color:var(--WHITE);
+}
+
+/*-----------COURSE DETAILS SECTION-------*/
+/*--Course Header--*/
+.course-header h2{
+    font-size:30px;
+    margin:0 0 15px;
+    font-weight: 600;
+}
+.course-header .average-rating{
+    font-weight: 600;
+    color:var(--main-color);
+}
+.course-header .average-stars i{
+    font-size:14px;
+    color:var(--main-color);
+}
+.course-header .rating span{
+    vertical-align: middle;
+}
+.course-header ul li{
+    margin:6px 0 0;
+    text-transform: capitalize;
+}
+.course-header ul li span{
+    margin-left: 5px;
+}
+
+/*-------COURSE TABS-------*/
+.course-tabs {
+    margin:30px 0px 20px;
+}
+.course-tabs .nav-link{
+    margin:0 10px 10px 0;
+}
+/*---------COURSE CURRICULUM----------*/
+.course-cirruculum .accordion-item{
+    border-color: var(--green-light);
+    background-color:transparent;
+}
+/* okun hizalaması */
+.course-cirruculum .accordion-button span{
+    position:absolute;
+    right: 17px;
+    font-size:14px;
+
+}
+/*okun ilk ve kapandıktan sonraki hali*/
+.course-cirruculum .accordion-button::after{
+    content:"\f077";
+    font-family:'Font Awesome 6 Free';
+    font-weight: 900;
+    background-image: none;
+    position: absolute;
+    left:17px;
+    top:50%;
+    transform: translateY(-50%);
+    height: auto;
+    width: auto;
+    line-height:1;
+}
+/*language basic,diğer textler için*/
+.course-cirruculum .accordion-button{
+    background-color:  transparent;
+    color: var(--black-90);
+    font-weight: 300;
+    flex-wrap: wrap;
+    padding-left: 50px;
+    padding-right: 160px;
+    line-height:1.5;
+}
+/*gerekli bsdeki hazır mavi rengi sıfırlamak için*/
+.course-cirruculum .accordion-button:focus{
+    box-shadow:none;
+}
+/*2 lessons | 20min*/
+.course-cirruculum .accordion-button:not(.collapsed) span{ 
+    font-weight:500;
+}
+/*bu kısım okun tıklandığında dönmesi için*/
+.course-cirruculum .accordion-button:not(.collapsed)::after{
+    transform:translateY(-50%) rotate(-180deg);
+}
+
+/*başlığa tıkladığında olan cssler*/
+.course-cirruculum .accordion-button:not(.collapsed){
+    font-weight:600;
+    border-bottom:1px solid var(--red-light);
+    transition:none;
+    box-shadow:none;
+}
+.course-cirruculum ul li{
+    position: relative;
+    padding: 0 50px 0 20px;
+    color:var(--black-70);
+}
+.course-cirruculum ul li span{ /*06.00 süresi*/
+    position:absolute;
+    font-size:14px;
+    right:0;
+    top:0;
+    color:var(--black-70);
+}
+.course-cirruculum ul li i{
+    position:absolute;
+    left:0;
+    top:6px;
+    font-size:12px;
+    color:var(--black-70);
+}
+/*----------COURSE DESCRIPTION---------*/
+.course-description h4{
+font-size:16px;
+}
+/*----------COURSE INSTRUCTOR----------*/
+.course-instructor .img-box img{
+max-width: 130px;
+height: 130px;
+border-radius: 50%;
+margin-bottom:15px;
+}
+.course-instructor h4{
+    font-size:14px;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+.course-instructor h4 span{
+    font-weight: 300;
+}
+.course-instructor .right-box ul li i{
+    color: var(--main-color);
+    margin-right: 5px;
+}
+.course-instructor ul li:not(:last-child){ /*son elemanın sayılmadığı klas kod yazımı*/
+    margin-bottom:5px;
+}
+/*----------COURSE REVIEWS----------*/
+.rating-summary .average-rating{
+    font-size:40px;
+    font-weight:700;
+    color: var(--black-90);
+}
+.rating-summary .average-stars i{
+    color: var(--main-color);
+}
+.rating-summary .rating-bars-item{
+    display:flex;
+    align-items: center;
+    margin-bottom:8px;
+}
+.rating-summary .progress{ /*100% hali arkası*/
+    height:8px;
+    background-color:var(--border-color-1);
+    width:calc(100% - 120px);
+    margin-right: 20px;
+    border-radius:0;
+}
+.rating-summary .progress-bar{ /*oranın gözüktüğü kısım*/
+    background-color: var(--main-color);
+}
+.rating-summary .star-text{
+    min-width:60px; /*barla aralarındaki mesafeyi açtı*/
+    color:var(--main-color);
+}
+
+/*--------FORMS-----*/
+.reviews-filter{
+    margin:0 0 35px;/*bottom*/
+    width:200px;
+}
+.form-group{
+    margin-bottom: 25px;
+    position:relative;
+}
+.form-control{
+    height: 48px;
+    border-color:var(--border-color-1);
+    color:var(--black-90);
+    background-color:transparent;
+}
+.form-control:focus{
+    background-color:transparent;
+    border-color:var(--border-color-1);
+    color:var(--black-90);
+    box-shadow: none; /*mavi gölgeyi sıfırlama*/
+}
+.select-icon{
+    position:absolute;
+    right:15px;
+    top:50%;
+    transform:translateY(-50%);/*Y eksenindeki konumunu hizalıyor(ortalandı)*/
+    pointer-events:none;/*mouse olaylarını karşı duyarsızlaştırıldı*/
+    font-size:13px;
+
+}
+select.form-control:focus option{
+    background-color:var(--select-box-bg-color);/*options arkaplanı için bende çalısmadı*/
+
+}
+
+.reviews-item{ /*img boxın yanındakilerin hizalanması*/
+    position: relative;
+    margin-bottom: 30px;
+    padding-left:65px;
+}
+.reviews-item .img-box{ /*görselle text yan yana gelsin diye position iki ayrı divde olmadıkları için*/
+    max-width: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    left:0;
+    right:0;
+    
+}
+.reviews-item h4{
+    font-size:16px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin:15px 0 5px;
+    color:var(--black-90);
+}
+.reviews-item .stars-rating i{
+    color:var(--main-color);
+    font-size:14px;
+}
+.reviews-item .stars-rating .date{
+    margin-left:5px;
+    font-size:14px;
+    display: inline-block;
+    /*stars-rating divi display block otomatik olarak*/
+}
+.reviews-item p{
+    margin:5px 0 0 ;
+}
+/*---------COURSE SIDEBAR---------*/
+.course-sidebar .img-box{
+    margin-bottom:20px;
+    border-radius: 5px;
+    overflow:hidden;
+    cursor:pointer;
+    position:relative;
+}
+.course-sidebar .img-box::before{ /*görselin üzerine fon rengi verdik*/
+    content: '';
+    position:absolute;
+    left: 0;
+    top:0;
+    height:100%;
+    width:100%;
+    background-color:var(--black-alpha-40);
+}
+.course-sidebar .play-icon{
+    position:absolute;
+    height:50px;
+    width:50px;
+    top:50%;
+    left:50%;
+    font-size:16px;
+    background-color: var(--main-color);
+    border-radius:50%;
+    color:var(--WHITE);
+    /*bunların hepsi yazılınca ortalıyor*/
+    transform: translate(-50%,-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*bunların hepsi yazılınca ortalıyor*/
+
+}
+.course-sidebar .img-box p{
+    position:absolute;
+    top:calc(50% + 40px);
+    color:var(--WHITE);
+    font-weight:500;
+    width:100%;
+}
+.course-sidebar .price{
+    display:flex;
+    align-items:center;
+    
+}
+.course-sidebar .price span{
+    margin-right:8px;
+}
+.course-sidebar .price-new{
+    font-size:30px;
+    font-weight:700;
+    color:var(--black-90);
+}
+.course-sidebar .price-discount{
+    color:var(--main-color);
+
+}
+.course-sidebar .features-list {
+    margin-bottom:20px;
+}
+.course-sidebar .features-list li{
+    position: relative;
+    padding-left:21px;/*noktalarla textin arasını açmak için*/
+    margin-bottom:8px;
+}
+.course-sidebar .features-list li::before{
+    /*li deki kırmızı noktaların hizalaması*/
+    content:'';
+    height:6px;
+    width:6px;
+    background-color: var(--main-color);
+    position:absolute;
+    left:0;
+    top:9px;
+    border-radius:50%;
+}
+.btn-block{
+    width:100%;
+}
+.video-modal .btn-close{
+    height:35px;
+    width:35px;
+    background-image: none;
+    opacity:1;
+    z-index:1;
+    position: absolute;
+    right:0;
+    top:-35px;
+    font-size:16px;
+    color:var(--WHITE);
+    box-shadow: none;
+    padding:0;
+}
+.video-modal .modal-content{
+    border:0;
+}
+/*--------------FORMS----------*/
+.form-title{
+    font-size:24px;
+    margin:0 0 30px;
+    font-weight:600;
+    text-align: center;
+}
+.form-control::placeholder{
+    color:var(--black-70);
+}
+.btn-form{
+    height:48px;
+}
+/*---------CONTACT SECTION---------*/
+.contact-item{
+    position:relative;
+    padding-left:55px;/*ikon sabit textler soldan kaydırıldı*/
+    margin-bottom:40px;/*itemin tamamı*/
+    /*position absolute değeri alan elementler 
+    padding margin değerlerinden etkilenmez yani 
+    ikonla yazıların arasındaki mesafeyi ayarlamak için kullanıslı bi yöntem*/
+}
+.contact-item .icon-box{
+    position:absolute;
+    height:40px;
+    width:40px;
+    left:0px;
+    top:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:50%;
+    background-color: var(--main-color);
+    color:var(--WHITE);
+    /*display özellikleri ikonu ortalamak için
+    left right width height ikon box için */       
+}
+textarea.form-control{
+    height:120px;
+    resize:none;
+    /*mesaj kutusunun height arttırıldı*/
+}
+/*----------STYLE SWITCHER---------*/
+.style-switcher{
+    width:250px;
+    position:fixed;
+    height: 100%;
+    background-color:var(--white);
+    right:-250px;/*style switcher panosunun kapalı hali*/
+    top:0;
+    z-index: 10;
+    padding:30px;
+    box-shadow: 3px 4px 4px #000;
+    transition: right 0.3s ease; /*açılma süresi*/
+}
+.style-switcher.open{
+    right:0;/*panonun açılmıs hali*/
+}
+.style-switcher-toggler{
+    height:40px;
+    width:40px;
+    position:absolute;
+    top:28%;
+    left:-40px;
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--WHITE);
+    border-radius: 8px 0 0 8px;
+    cursor:pointer;
+}
+.style-switcher h3{
+    font-size:18px;
+    text-transform: capitalize;
+    border-bottom:1px solid var(--border-color-1);
+    padding:0 0 10px; /*padding bottom*/
+    /*üst sağ-sol alt*/
+}
+
+.style-switcher-item{
+    padding:10px 0;/*üst-alt sağ-sol*/
+    border-bottom: 1px solid var(--border-color-1);
+}
+.theme-colors button{
+    height:30px;
+    width:30px;
+    border:none;/*buttondaki hazır borderı sıfırladık*/
+    border-radius:50%;
+    vertical-align: middle;
+    border-radius: 50%;
+    /*tik işareti için*/
+    padding:0;
+    position:relative;
+}
+.theme-colors button::before{/*buttonun içindeki tik işareti*/
+    content: "\f00c";
+    font-family: 'Font Awesome 6 Free';
+    font-weight:900;
+    font-size: 12px;
+    color: var(--WHITE);
+    transition:all 0.3 ease;
+    /*tiki ortalama*/
+    position:absolute;
+    left: 50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    opacity:0;
+}
+.theme-colors button.active::before{
+    opacity:1;
+}
+.theme-colors .color-1{
+    background-color: hsl(0, 74%, 61%);
+}
+.theme-colors .color-2{
+    background-color: hsl(230, 95%, 67%);
+}
+.theme-colors .color-3{
+    background-color: hsl(36, 95%, 67%);
+}
+.theme-colors .color-4{
+    background-color: hsl(277, 95%, 67%);
+}
+.theme-colors .color-5{
+    background-color: hsl(164, 95%, 67%);
+}
+
+
+
+/*----------------------------------------------------------------
+.header{
+    background:#f1f1f1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding:0px 15px;
+}
+.logo{
+    width: 32px; height: 32px; background-color: dodgerblue;
+}
+.header a{text-decoration: none;}
+.headericon{
+    width: 32px; height: 32px; background-color: mediumblue;
+}
+.mobileicon{
+    display: none;
+}
+@media screen and (max-width:600px) {
+    .header{
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .headerlink{
+        flex-direction: column;
+        display: flex;
+    }
+    .headerlinkdisplay{
+        display: none;
+    }
+    .logo{
+        display:none;
+    }
+    .mobileicon{
+        display: block;
+    }
+}
+
+.card{box-sizing: border-box;
+   
+    border:1px solid black;
+    border-radius: 10px;
+    margin:  20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cardimg{height: 190px;
+    width:200px;
+    border-radius: 20px;
+    background-color: blue;
+    margin:20px;
+    
+    
+}
+.cardtext{margin:0px 10px 10px 10px;
+    text-align: center;
+}
+
+.grid-container{
+    background-color:grey;
+    display: grid;
+    grid-gap: 10px;
+    row-gap:10px;
+    column-gap:10px;
+    
+    grid-template-columns: auto auto auto auto auto auto;
+    padding: 10px;
+}
+.grid-container > div{
+    background-color:gainsboro;
+    text-align: center;
+    padding: 20px;
+   
+    
+}
+.grid-items8{
+    grid-area:1/2/5/6; 
+    /* row baslangıc/ column baslangıc/ row bitis/ column bitis  
+    rowa dikey columna yatay sekilde bak
+          
+    /*grid-column:2/6; ya da grid-column:2/span 4 
+    /*grid-row: 1/5;
+    /*grid-area ile yer değiştirme yapılır sıralama yapılır
+    
+    
+}
+.grid-container2{
+    display: grid;
+    /*grid-template-columns: auto auto;
+    grid-template-areas: 'header header header header header' 'menu main main side side' 
+    'menu footer footer footer footer';
+    background-color: crimson;
+    grid-gap: 10px;
+    padding:5px;
+}
+.grid-container2 > div{
+    background-color:darkseagreen;
+    text-align: center;
+    padding: 10px;
+}
+.griditemheader{
+    grid-area: header;
+    /*grid-column:1/4;
+}
+.griditemmenu{
+    grid-area: menu;
+    /*grid-row: 2/4;
+}
+.griditemfooter{
+    grid-area: footer;
+    /*grid-column: 2/4;
+}
+.griditemside{
+    grid-area: side;
+}
+.griditemmain{
+    grid-area: main;
+}
+--------------------*/

@@ -1,0 +1,128 @@
+img {
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.box {
+  height: auto;
+  box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.08);
+}
+.header {
+  box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.08);
+}
+header-backdrop,
+.header-close-btn,
+.header-hamburger-btn {
+  display: none;
+}
+.header .menu-item {
+  display: inline-block; /*yatay oldu*/
+  margin-left: 40px;
+  position: relative;
+}
+.header .menu-item > a {
+  display: block; /*padding etkinlesti*/
+  padding: 24px 0px;
+  transition: color 0.3s ease;
+  color: yellowgreen;
+}
+.header .sub-menu {
+  background-color: whitesmoke;
+  position: absolute;
+  transition: all 0.3s ease; /*-hareketin süresini ayarlar transform ve opacity etkiler--*/
+  transform: translateY (10px); /*- Y ekseninde aşağıya doğru 10px kayar 0.3s de*/
+  visibility: hidden;
+  opacity: 0; /*-- sub menuyu saklamak için bunu da yazmalısın 0.3s de--*/
+  z-index: 2;
+  top: 100%;
+  left: 0;
+  width: 210px;
+  padding: 10px 0px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.08);
+}
+
+@media (min-width: 992px) {
+  .header .menu-item:hover > .sub-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.header .sub-menu-item a {
+  display: block;
+  padding: 10px 20px;
+  color: var(--black-90);
+  text-transform: capitalize;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+.boxes {
+  margin-bottom: 50px;
+}
+.box {
+  height: 150px;
+  background: linear-gradient(-45deg, #686ffd, #f1a73f 80%, #686ffd);
+  margin-right: 30px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+}
+
+.toptitle {
+  padding: 20px 0px;
+  font-size: 25px;
+}
+.card-title {
+  padding: 15px 0px;
+  font-size: 17px;
+  font-weight: 600;
+}
+.card-text {
+  font-size: 15px;
+  font-weight: 300;
+}
+.box .button {
+  height: 35px;
+  width: 100%;
+
+  background-color: black;
+  opacity: 0.7;
+  color: white;
+}
+button {
+  border: none;
+}
+button:hover {
+  box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.08);
+}
+.banner {
+  background-color: #686ffd;
+  height: 300px;
+  border-radius: 50px;
+}
+.banner-text {
+  font-weight: 500;
+  font-size: 30px;
+  padding: 50px 0px 0px 40px;
+  color: whitesmoke;
+}
+.banner-buton {
+  color: #686ffd;
+  text-align: center;
+  padding: 5px 15px;
+  font-size: 15px;
+  background-color: whitesmoke;
+  border-radius: 50px;
+  margin: 25px 0 0 40px;
+}
+.banner-p {
+  color: whitesmoke;
+  font-size: 12px;
+  padding: 0 0 0 40px;
+}
